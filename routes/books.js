@@ -1,10 +1,12 @@
 const router=require('express').Router()
+const Book=require('../model/Book')
 const authorized=require('../middleWare')
 
 router
-.get('/private',authorized,(req,res)=>{
-    res.send("private data")
-    console.log(req.body)
+.post('/add',authorized,(req,res)=>{
+    const book=new Book({
+        
+    })
 })
 
 module.exports=router

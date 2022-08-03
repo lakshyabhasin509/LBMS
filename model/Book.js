@@ -34,8 +34,8 @@ const bookSchema=new mongoose.Schema({
         default:Date.now
     },
     pdfUrl:{
-        type:String
+        type:Date
     }
 })
 
-module.exports=mongoose.model("Book",userSchema)
+module.exports=mongoose.model("Book",bookSchema)
