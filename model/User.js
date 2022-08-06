@@ -24,13 +24,13 @@ const userSchema=new mongoose.Schema({
     books:[{
 
         bookId:{
-            type:String,
+            type:mongoose.ObjectId,
             required:true,   
         }
-        ,isPrivate:{
+        ,isPublic:{
             type:Boolean,
             required:true,
-            default:false
+            default:true
         }
 
     }],

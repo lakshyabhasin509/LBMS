@@ -10,7 +10,7 @@ const privateRoute=require('./routes/private')
 
 app.use(express.json())
 // connect to DB
-mongoose.connect(process.env.DB_CONNECT,
+mongoose.connect(process.env.LOCAL_DB_CONNECT,
 {
     useNewUrlParser:true
 },

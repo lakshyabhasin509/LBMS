@@ -1,27 +1,17 @@
 const mongoose=require('mongoose')
 
 const bookSchema=new mongoose.Schema({
-    bookId:{
-        book_id:{
-            type:String,
-            required:true,   
-        }
-    },
-    name:{
+
+    username:{
         type:String,
         required:true,
-        unique:true,
         min:6,
-        default:'Admin',
         max:255
 
     },
     bookName:{
         type:String,
         required:true,
-        unique:true,
-        min:6,
-        max:255
     },
     author:{
         type:String
@@ -34,7 +24,14 @@ const bookSchema=new mongoose.Schema({
         default:Date.now
     },
     pdfUrl:{
-        type:Date
+        type:String,
+        required:true,
+        unique:true
+        
+    },
+    isPublic:{
+        type:Boolean,
+        dafault:true
     }
 })
 

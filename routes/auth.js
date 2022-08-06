@@ -10,7 +10,6 @@ router
 
     //  LETS VALIDATE USING JOI
     const {error}=registerValidation(req.body)
-    
     if(error){
         return res.status(400).send(error.details[0].message)
      }
@@ -18,7 +17,6 @@ router
     //  hash password
     const salt= await bcrypt.genSalt(10)
     const hashedPassword=await bcrypt.hash(req.body.password,salt)
-
 
 
     const user=new User({
@@ -55,7 +53,7 @@ router
     // using jwt to assign token
 
     
-    const accessToken=jwt.sign({_id:user._id},process.env.ACCESS_TOKEN_SECRET,{
+    const accessToken=jwt.sign({_id:user._id , username:user.name },process.env.ACCESS_TOKEN_SECRET,{
         expiresIn:'24h'
     })
     res.header('Access_Token',accessToken).send(accessToken)
