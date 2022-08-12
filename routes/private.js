@@ -5,9 +5,14 @@ const Book=require('../model/Book')
 
 router
 .get('/books',authorized, async (req,res)=>{
-
    res.json( await Book.find({username:req.username}))
 })
+
+.get('/booksArray',authorized,async (req,res)=>{
+
+    
+})
+
 .patch('/add/book',authorized,async(req,res)=>{
     ////////////Adding bookId to User's books Array////// 
     var objBook = { bookId:req.body.bookId, isPublic:req.body.isPublic };
