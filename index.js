@@ -10,18 +10,15 @@ const bookRoute = require("./routes/books");
 const authRoute = require("./routes/auth");
 const privateRoute = require("./routes/private");
 const uploadRoute = require("./routes/upload");
+const dbUrl = process.env.LOCAL_DB_CONNECT;
+const mongoOpts = { useNewUrlParser: true };
 
 app.use(express.json());
 // connect to DB
-mongoose.connect(
-  process.env.LOCAL_DB_CONNECT,
-  {
-    useNewUrlParser: true,
-  },
-  () => {
-    console.log("DataBase connected");
-  }
-);
+mongoose.connect(dbUrl, mongoOpts, (err) => {
+  if (err) console.log(err);
+  else console.log("mongdb is connected");
+});
 
 app.use(upload());
 
