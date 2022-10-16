@@ -1,34 +1,11 @@
-const router=require('express').Router()
-const authorized=require('../middleWare')
-const User=require('../model/User')
-const Book=require('../model/Book')
+const router = require("express").Router();
+const {
+  getPrivateBooks_ctrl,
+  addBookToUserList_ctrl,
+} = require("../controllers/private");
+const authorized = require("../middleWare");
 
-router
-.get('/books',authorized, async (req,res)=>{
-   res.json( await Book.find({username:req.username}))
-})
+router.get("/books", authorized, getPrivateBooks_ctrl);
+router.patch("/add/book", authorized, addBookToUserList_ctrl);
 
-.get('/booksArray',authorized,async (req,res)=>{
-
-    
-})
-
-.patch('/add/book',authorized,async(req,res)=>{
-    ////////////Adding bookId to User's books Array////// 
-    var objBook = { bookId:req.body.bookId, isPublic:req.body.isPublic };
-
-User.findOneAndUpdate(
-   { name:req.username }, 
-   { $push: { books: objBook  } },
-  function (error, success) {
-        if (error) {
-            res.send('error')
-            console.log(error);
-        } else {
-            console.log(success);
-        }
-    });
-
-})
-
-module.exports=router
+module.exports = router;
