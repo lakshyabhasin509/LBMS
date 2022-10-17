@@ -1,4 +1,5 @@
 const Book = require("../model/Book");
+const APIPerReqDefaultLimit = 20;
 
 async function addBook_serv(req) {
   if (!req.body.bookName) throw new Error("Book must have a name", { cause: 400 });
@@ -15,7 +16,11 @@ async function addBook_serv(req) {
 }
 
 async function getBooks_serv(req) {
-  const books = Book.find({ isPublic: true });
+  const queries = req.query;
+  let {Limit, Skip} = queries;
+  Limit = Limit? parseInt(Limit): APIPerReqDefaultLimit;
+  Skip = Skip? parseInt(Skip): 0;
+  const books = await Book.find({ isPublic: true }).skip(Skip).limit(Limit);
   return books;
 }
 
