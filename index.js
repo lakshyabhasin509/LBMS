@@ -31,5 +31,7 @@ app.use(
     swaggerUi.serve,
     swaggerUi.setup(swaggerJsDoc(swaggerSpec))
 );
-
+app.get("/",(req,res)=>{
+    res.send({stutus:"ok"})
+})
 app.listen(3000, () => console.log("server is running on port 3000"));
