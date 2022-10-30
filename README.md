@@ -5,7 +5,7 @@
 ### Clone the project
 
 1. Fork the project to your repository
-2. Clone de project using: `git clone url/of/your/repository.com`
+2. Clone the project using: `git clone url/of/your/repository.com`
 3. Install dependencies using: `npm i`
 4. Create a branch with this format "feature_username"
 5. Start the project with: `npm run start:dev`
@@ -20,8 +20,7 @@
 2. Create a databse
 3. Create a .env file
 4. Copy and paste .env.example to your .env file and change "your_database_name" string with the name of the databse you created and add your email and password and domain
-   `LOCAL_DB_CONNECT="mongodb://localhost:27020/your_database_name"
+   'LOCAL_DB_CONNECT="mongodb://localhost:27020/your_database_name"
    EMAIL_USERNAME = "youremail@gmail.com"
    EMAIL_PASSWORD = "yourpassword"
-   DOMAIN = "https://yourdomain.com"
-    `
+   DOMAIN = "https://yourdomain.com" '
