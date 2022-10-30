@@ -25,3 +25,7 @@
    EMAIL_PASSWORD = "yourpassword"
    ACCESS_TOKEN_SECRET="TOKEN_SECRET"
    DOMAIN = "https://yourdomain.com" '
+
+### Note
+
+1. Don't use gmail for sending email because google has disabled less secure app access.
