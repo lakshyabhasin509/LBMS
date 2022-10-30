@@ -1,3 +1,3 @@
 # LBMS
 
-This is a book library
+This is a open library for all

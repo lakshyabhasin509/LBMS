@@ -25,7 +25,13 @@
    EMAIL_PASSWORD = "yourpassword"
    ACCESS_TOKEN_SECRET="TOKEN_SECRET"
    DOMAIN = "https://yourdomain.com" '
+5. If your are facing issues with email , try switching on 2 factor authentication on you google account and set up app-password. Use that app password as your email password.
+   'LOCAL_DB_CONNECT="mongodb://localhost:27020/your_database_name"
+   EMAIL_USERNAME = "youremail@gmail.com"
+   EMAIL_PASSWORD = "app-password"
+   ACCESS_TOKEN_SECRET="TOKEN_SECRET"
+   DOMAIN = "https://yourdomain.com" '
 
 ### Note
 
-1. Don't use gmail for sending email because google has disabled less secure app access.
+1. Don't Use Gmail for sending email because google has disabled less secure app access.
