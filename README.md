@@ -32,5 +32,3 @@
    ACCESS_TOKEN_SECRET="TOKEN_SECRET"
    DOMAIN = "https://yourdomain.com" '
 
-Note
-Don't Use Gmail for sending email because google has disabled less secure app access.
